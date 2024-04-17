@@ -22,7 +22,7 @@ Tablet:
 ![Image Alt Text](arquivo/imgGitPortfolio/t_home.JPG)
 
 --
-![Image Alt Text](arquivo/imgGitPortfolio/t_users.JPG)
+![Image Alt Text](arquivo/imgGitPortfolio/t_gestaoGinasio.JPG)
 
 Integração Power App e Power BI
 ![Image Alt Text](arquivo/imgGitPortfolio/t_pbi.JPG)
