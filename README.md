@@ -19,9 +19,6 @@ Tablet:
     Simple login page
 ![Image Alt Text](arquivo/imgGitPortfolio/t_login.JPG)
 
-    Home page with user name
-![Image Alt Text](arquivo/imgGitPortfolio/t_home.JPG)
-
     The page for gym management is where occurrences are resolved
 ![Image Alt Text](arquivo/imgGitPortfolio/t_gestaoGinasio.JPG)
 
@@ -35,9 +32,6 @@ Mobile:
 
     Capture pictures of occurrences and send them to the gallery.
 ![Image Alt Text](arquivo/imgGitPortfolio/m_camera.JPG)
-
-    Gallery with pictures of occurrences.
-![Image Alt Text](arquivo/imgGitPortfolio/m_galeria.JPG)
 
 -- Power Automate
 
