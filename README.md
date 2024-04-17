@@ -11,9 +11,6 @@
     Quarterly changes in gym membership
 ![Image Alt Text](arquivo/imgGitPortfolio/pbi_6.JPG)
 
---
-![Image Alt Text](arquivo/imgGitPortfolio/pbi_8.JPG)
-
 
 -- Power Apps
 
