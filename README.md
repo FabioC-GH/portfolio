@@ -3,7 +3,7 @@
  site: https://fabioc-gh.github.io/portfolio/
 
 
--- Power BI
+Power BI
 
     An overview of gym registrations.
 ![Image Alt Text](arquivo/imgGitPortfolio/pbi_1.JPG)
@@ -12,19 +12,19 @@
 ![Image Alt Text](arquivo/imgGitPortfolio/pbi_6.JPG)
 
 
--- Power Apps
+Power Apps
 
 Tablet:
---
+    Simple login page
 ![Image Alt Text](arquivo/imgGitPortfolio/t_login.JPG)
 
---
+    Home page with user name
 ![Image Alt Text](arquivo/imgGitPortfolio/t_home.JPG)
 
---
+    The page for gym management is where occurrences are resolved
 ![Image Alt Text](arquivo/imgGitPortfolio/t_gestaoGinasio.JPG)
 
-Integração Power App e Power BI
+    Integration of Power BI reports into Power apps
 ![Image Alt Text](arquivo/imgGitPortfolio/t_pbi.JPG)
 
 Mobile:
