@@ -1,6 +1,9 @@
 # portfolio
- portfolio
- site: https://fabioc-gh.github.io/portfolio/
+ 
+A short portfolio showcases projects that were developed using Power Platform tools.
+
+
+ alternative portfolio website: https://fabioc-gh.github.io/portfolio/
 
 
 Power BI
