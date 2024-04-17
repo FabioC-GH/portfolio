@@ -4,7 +4,7 @@
 
 
 -- Power BI
-
+![Image Alt Text](arquivo/imgGitPortfolio/pbi_1.JPG)
 
 -- Power Apps
 
