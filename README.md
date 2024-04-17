@@ -15,6 +15,7 @@ Power BI
 Power Apps
 
 Tablet:
+
     Simple login page
 ![Image Alt Text](arquivo/imgGitPortfolio/t_login.JPG)
 
@@ -29,27 +30,25 @@ Tablet:
 
 Mobile:
 
---
-
-![Image Alt Text](arquivo/imgGitPortfolio/m_camera.JPG)
-
---
-
+    A task list with a filter that allows the manager to add pictures
 ![Image Alt Text](arquivo/imgGitPortfolio/m_listaTarefas.JPG)
 
---
+    Capture pictures of occurrences and send them to the gallery.
+![Image Alt Text](arquivo/imgGitPortfolio/m_camera.JPG)
 
+    Gallery with pictures of occurrences.
 ![Image Alt Text](arquivo/imgGitPortfolio/m_galeria.JPG)
 
 -- Power Automate
 
 
--- DataVerse
+DataVerse
 
---
-
+    Information is stored in a Dataverse table
 ![Image Alt Text](arquivo/imgGitPortfolio/dv_4.JPG)
 
+    Model-driven app using a Dataverse table.
 ![Image Alt Text](arquivo/imgGitPortfolio/dv_1.JPG)
 
+    Entering a new contact in the Model driven app
 ![Image Alt Text](arquivo/imgGitPortfolio/dv_3.JPG)
