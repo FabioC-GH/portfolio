@@ -33,8 +33,12 @@ Mobile:
     Capture pictures of occurrences and send them to the gallery.
 ![Image Alt Text](arquivo/imgGitPortfolio/m_camera.JPG)
 
--- Power Automate
+Power Automate
+    Daily report of new entries in a database.
+![Image Alt Text](arquivo/imgGitPortfolio/flow1.JPG)
 
+    Age confirmation flow
+![Image Alt Text](arquivo/imgGitPortfolio/flow2.JPG)
 
 DataVerse
 
