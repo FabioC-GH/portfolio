@@ -4,11 +4,12 @@
 
 
 -- Power BI
+
 ![Image Alt Text](arquivo/imgGitPortfolio/pbi_1.JPG)
 --
 ![Image Alt Text](arquivo/imgGitPortfolio/pbi_6.JPG)
 --
-![Image Alt Text](arquivo/imgGitPortfolio/pbi_6.JPG)
+![Image Alt Text](arquivo/imgGitPortfolio/pbi_8.JPG)
 
 
 -- Power Apps
@@ -27,13 +28,17 @@ Integração Power App e Power BI
 ![Image Alt Text](arquivo/imgGitPortfolio/t_pbi.JPG)
 
 Mobile:
+
 --
+
 ![Image Alt Text](arquivo/imgGitPortfolio/m_camera.JPG)
 
 --
+
 ![Image Alt Text](arquivo/imgGitPortfolio/m_listaTarefas.JPG)
 
 --
+
 ![Image Alt Text](arquivo/imgGitPortfolio/m_galeria.JPG)
 
 -- Power Automate
