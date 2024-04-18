@@ -1,9 +1,11 @@
 # portfolio
  
-A short portfolio showcases projects that were developed using Power Platform tools.
+A short portfolio showcases project that was developed using Power Platform tools.
+alternative portfolio website: https://fabioc-gh.github.io/portfolio/
 
 
- alternative portfolio website: https://fabioc-gh.github.io/portfolio/
+    This project aims to create an application for a gymnasium. Offering power bi reports for better understanding the progression of membership evolution and gym locations performance. 
+    A power apps app was developed both in mobile and tablet versions for management the gym daily work and its employes. A simple model drive app, based on Dataverse tables was also developed for temporary promotions.
 
 
 Power BI
