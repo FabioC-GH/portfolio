@@ -1,0 +1,266 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    triggerQueries:
+      - comprar
+      - preço
+      - preco
+      - quero comprar
+      - compra
+      - loja
+
+  actions:
+    - kind: Question
+      id: question_5hnNSG
+      interruptionPolicy:
+        allowInterruption: true
+
+      variable: init:Topic.ProdutoAComprar
+      prompt: O que desaja comprar?
+      entity:
+        kind: EmbeddedEntity
+        definition:
+          kind: ClosedListEntity
+          items:
+            - id: Agua
+              displayName: Agua
+
+            - id: Barras Proteína
+              displayName: Barras Proteína
+
+            - id: Saco Avengers Gym
+              displayName: Saco Avengers Gym
+
+            - id: Luvas de levantar pesos
+              displayName: Luvas de levantar pesos
+
+    - kind: ConditionGroup
+      id: conditionGroup_e2gUd3
+      conditions:
+        - id: conditionItem_4BYjWA
+          condition: =Topic.ProdutoAComprar = 'cr4ab_gymBotHorario.topic.GymVendas.main.question_5hnNSG'.Agua
+
+        - id: conditionItem_BHNkZn
+          condition: =Topic.ProdutoAComprar = 'cr4ab_gymBotHorario.topic.GymVendas.main.question_5hnNSG'.'Barras Proteína'
+
+        - id: conditionItem_i0xGO8
+          condition: =Topic.ProdutoAComprar = 'cr4ab_gymBotHorario.topic.GymVendas.main.question_5hnNSG'.'Saco Avengers Gym'
+
+        - id: conditionItem_jzUjoG
+          condition: =Topic.ProdutoAComprar = 'cr4ab_gymBotHorario.topic.GymVendas.main.question_5hnNSG'.'Luvas de levantar pesos'
+
+      elseActions:
+        - kind: SendActivity
+          id: sendActivity_hXb1gS
+          activity: Não temos esse produto :(
+
+    - kind: SetVariable
+      id: setVariable_mkFSN4
+      variable: Topic.ProdutoAComprarString
+      value: =Text(Topic.ProdutoAComprar)
+
+    - kind: InvokeFlowAction
+      id: invokeFlowAction_Y2OJ0e
+      input:
+        binding:
+          text: =Topic.ProdutoAComprarString
+
+      output:
+        binding:
+          id_produto: Topic.ID
+
+      flowId: 0ce31c90-bb00-ef11-9f89-000d3a47f3c7
+
+    - kind: InvokeFlowAction
+      id: invokeFlowAction_5icBkP
+      input:
+        binding:
+          text: =Topic.ID
+
+      output:
+        binding:
+          produtoresposta: Topic.ProdutoResposta
+
+      flowId: f5967df1-ba00-ef11-9f89-000d3a47f3c7
+
+    - kind: SendActivity
+      id: sendActivity_q5HYIt
+      activity: "{Topic.ProdutoResposta}"
+
+    - kind: Question
+      id: question_vdX81Y
+      interruptionPolicy:
+        allowInterruption: true
+
+      variable: init:Topic.ComfirmaCompra
+      prompt: Quer comprar?
+      entity: BooleanPrebuiltEntity
+
+    - kind: ConditionGroup
+      id: conditionGroup_IsSprz
+      conditions:
+        - id: conditionItem_1FDC4x
+          condition: =Topic.ComfirmaCompra = true
+          actions:
+            - kind: InvokeFlowAction
+              id: invokeFlowAction_XXDFi8
+              input:
+                binding:
+                  text: =Topic.ID
+
+              output:
+                binding:
+                  temstock: Topic.TemStock
+
+              flowId: 5e6fe16b-bf00-ef11-9f89-000d3a47f3c7
+
+            - kind: ConditionGroup
+              id: conditionGroup_o8mF2Q
+              conditions:
+                - id: conditionItem_YGMabq
+                  condition: =Topic.TemStock = "sim"
+                  actions:
+                    - kind: Question
+                      id: question_BgWNdx
+                      interruptionPolicy:
+                        allowInterruption: true
+
+                      variable: init:Topic.Quantidade
+                      prompt: Quantos que comprar??
+                      entity: NumberPrebuiltEntity
+
+                    - kind: Question
+                      id: question_UiK7E6
+                      interruptionPolicy:
+                        allowInterruption: true
+
+                      variable: init:Topic.EmailCliente
+                      prompt: Qual o seu email??
+                      entity: EmailPrebuiltEntity
+
+                    - kind: InvokeFlowAction
+                      id: invokeFlowAction_bpiCXY
+                      input:
+                        binding:
+                          text: =Topic.ProdutoAComprarString
+
+                      output:
+                        binding:
+                          id_produto: Topic.id_Produto
+
+                      flowId: 0ce31c90-bb00-ef11-9f89-000d3a47f3c7
+
+                    - kind: InvokeFlowAction
+                      id: invokeFlowAction_R7M0Nz
+                      input:
+                        binding:
+                          text: =Topic.ID
+
+                      output:
+                        binding:
+                          preco: Topic.Preco
+
+                      flowId: 15d4ab0d-5b01-ef11-9f89-000d3a47f3c7
+
+                    - kind: SetVariable
+                      id: setVariable_xuoSVP
+                      variable: Topic.PrecoTotal
+                      value: =Topic.Preco * Topic.Quantidade
+
+                    - kind: Question
+                      id: question_lzVgGK
+                      interruptionPolicy:
+                        allowInterruption: true
+
+                      variable: init:Topic.ComfiramVenda
+                      prompt: |-
+                        - Confirme a sua compra:
+                        - item: {Topic.ProdutoAComprar}
+                        - Quantidade: {Topic.Quantidade} 
+                        - Total: {Topic.PrecoTotal}  €
+                        - Confirma a compra??
+                      entity: BooleanPrebuiltEntity
+
+                    - kind: InvokeFlowAction
+                      id: invokeFlowAction_ZMHDYt
+                      input:
+                        binding:
+                          number: =Topic.Quantidade
+                          text: =Topic.ID
+
+                      output:
+                        binding:
+                          stocksuficiente: Topic.StockSuficiente
+
+                      flowId: 41238c8c-8801-ef11-9f89-000d3a47f3c7
+
+                    - kind: ConditionGroup
+                      id: conditionGroup_mAcJnZ
+                      conditions:
+                        - id: conditionItem_iLUD1f
+                          condition: =Topic.ComfiramVenda = true && Topic.StockSuficiente = "sim"
+                          actions:
+                            - kind: InvokeFlowAction
+                              id: invokeFlowAction_O3ib5X
+                              input:
+                                binding:
+                                  number: =Topic.Quantidade
+                                  number_1: =Topic.PrecoTotal
+                                  text: =Topic.id_Produto
+                                  text_1: =Topic.EmailCliente
+
+                              output: {}
+                              flowId: fc4eb89b-5901-ef11-9f89-000d3a47f3c7
+
+                            - kind: InvokeFlowAction
+                              id: invokeFlowAction_zyvYwK
+                              input:
+                                binding:
+                                  number: =Topic.Quantidade
+                                  text: =Topic.ID
+                                  text_1: =Topic.id_Produto
+
+                              output: {}
+                              flowId: d648ef18-5d01-ef11-9f89-000d3a47f3c7
+
+                            - kind: SendActivity
+                              id: sendActivity_99uhPI
+                              activity: Obrigado pela sua compra.
+
+                            - kind: InvokeFlowAction
+                              id: invokeFlowAction_RkArDZ
+                              input:
+                                binding:
+                                  number: =Topic.PrecoTotal
+                                  number_1: =Topic.Quantidade
+                                  text: =Topic.ProdutoAComprarString
+                                  text_1: =Topic.EmailCliente
+
+                              output: {}
+                              flowId: fa8abe7d-5f01-ef11-9f89-000d3a47f3c7
+
+                            - kind: SendActivity
+                              id: sendActivity_tj5dXo
+                              activity: Foi-lhe enviado o recibo por email
+
+                      elseActions:
+                        - kind: ConditionGroup
+                          id: conditionGroup_51wuzS
+                          conditions:
+                            - id: conditionItem_JxdEUC
+                              condition: =Topic.StockSuficiente = "nao"
+                              actions:
+                                - kind: SendActivity
+                                  id: sendActivity_4p2l7u
+                                  activity: Stock insuficiente para a sua encomenda.
+
+                        - kind: SendActivity
+                          id: sendActivity_SUTxlu
+                          activity: Compra cancelada. Em que posso ajudar?
+
+              elseActions:
+                - kind: SendActivity
+                  id: sendActivity_TDVUKu
+                  activity: "{Topic.ProdutoAComprar} está sem Stock."

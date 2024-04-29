@@ -1,0 +1,257 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    triggerQueries:
+      - Qual o horário do ginásio
+      - ginásio horário
+      - Horário
+      - horario
+      - hora
+      - horas
+      - aberto
+      - horário ginasio
+
+  actions:
+    - kind: Question
+      id: question_tIABbK
+      interruptionPolicy:
+        allowInterruption: true
+
+      variable: init:Topic.Cidade
+      prompt: Qual a cidade onde fica o ginásio??
+      entity:
+        kind: ClosedListEntityReference
+        entityId: cr4ab_gymBotHorario.entity.CidadeGym
+        selectedItems:
+          - 4cralC
+          - 41h1lN
+          - s8gxXs
+          - t3VlB8
+
+    - kind: SetVariable
+      id: setVariable_D2zUuR
+      variable: Topic.HorarioEmail
+      value: nulo
+
+    - kind: SetVariable
+      id: setVariable_0l64bU
+      variable: Topic.Horario
+      value: falta horario
+
+    - kind: ConditionGroup
+      id: conditionGroup_LcRIM7
+      conditions:
+        - id: conditionItem_yxGPRY
+          condition: =Topic.Cidade = 'cr4ab_gymBotHorario.entity.CidadeGym'.s8gxXs
+          actions:
+            - kind: SendActivity
+              id: sendActivity_PbWWUJ
+              activity: Segunda a sexta das 6:00 a 24:00
+
+            - kind: SetVariable
+              id: setVariable_8uaho0
+              variable: Topic.Horario
+              value: 5ª a Domingo das 10:00 as 24:00
+
+      elseActions:
+        - kind: ConditionGroup
+          id: conditionGroup_beHnwO
+          conditions:
+            - id: conditionItem_V5Aeia
+              condition: =Topic.Cidade = 'cr4ab_gymBotHorario.entity.CidadeGym'.'4cralC'
+              actions:
+                - kind: SendActivity
+                  id: sendActivity_oonVsJ
+                  activity: |-
+                    2ª a 4ª das 7:00 as 24:00;
+                    5ª a Domingo das 9:00 as 24:00
+
+                - kind: SetVariable
+                  id: setVariable_7Omoyj
+                  variable: Topic.Horario
+                  value: 2ª a 4ª das 7:00 as 24:00; 5ª a Domingo das 9:00 as 24:00
+
+          elseActions:
+            - kind: ConditionGroup
+              id: conditionGroup_z91iwI
+              conditions:
+                - id: conditionItem_RN5Pbe
+                  condition: =Topic.Cidade = 'cr4ab_gymBotHorario.entity.CidadeGym'.'41h1lN'
+                  actions:
+                    - kind: SendActivity
+                      id: sendActivity_Q5vyhZ
+                      activity: 2ª a domingo das 10:00 as 24:00
+
+                    - kind: SetVariable
+                      id: setVariable_HJ9I3W
+                      variable: Topic.Horario
+                      value: 2ª a domingo das 10:00 as 24:00
+
+              elseActions:
+                - kind: ConditionGroup
+                  id: conditionGroup_OI1SqB
+                  conditions:
+                    - id: conditionItem_gawGNL
+                      condition: =Topic.Cidade = 'cr4ab_gymBotHorario.entity.CidadeGym'.t3VlB8
+                      actions:
+                        - kind: SendActivity
+                          id: sendActivity_Tp6BR5
+                          activity: |-
+                            2ª a 4ª das 7:00 as 24:00;
+                            5ª a Domingo das 10:00 as 24:00
+
+                        - kind: SetVariable
+                          id: setVariable_KYyPZ5
+                          variable: Topic.Horario
+                          value: 2ª a 4ª das 7:00 as 24:00; 5ª a Domingo das 10:00 as 24:00
+
+                  elseActions:
+                    - kind: SendActivity
+                      id: sendActivity_HYFVsI
+                      activity: Não temos ginásio nessa cidade
+
+                    - kind: SetVariable
+                      id: setVariable_LSsLq6
+                      variable: Topic.HorarioEmail
+                      value: default
+
+    - kind: ConditionGroup
+      id: conditionGroup_HxyzM8
+      conditions:
+        - id: conditionItem_kItLMG
+          condition: =Topic.HorarioEmail <> "default"
+          actions:
+            - kind: Question
+              id: question_TkOfp8
+              interruptionPolicy:
+                allowInterruption: true
+
+              variable: init:Topic.EmailConfirmacao
+              prompt: Quer receber o horário por email?
+              entity: BooleanPrebuiltEntity
+
+            - kind: ConditionGroup
+              id: conditionGroup_xXfM6z
+              conditions:
+                - id: conditionItem_95QdyI
+                  condition: =Topic.EmailConfirmacao = true
+                  actions:
+                    - kind: Question
+                      id: question_mQxujS
+                      interruptionPolicy:
+                        allowInterruption: true
+
+                      variable: init:Topic.Email
+                      prompt: Qual o seu email??
+                      entity: EmailPrebuiltEntity
+
+                    - kind: SetVariable
+                      id: setVariable_fx5mtZ
+                      variable: Topic.CidadeString
+                      value: =Text(Topic.Cidade)
+
+                    - kind: InvokeFlowAction
+                      id: invokeFlowAction_2CSc4Z
+                      input:
+                        binding:
+                          text: =Topic.Email
+                          text_1: =Topic.Horario
+                          text_2: =Topic.CidadeString
+
+                      output: {}
+                      flowId: 1ce6000d-5efe-ee11-a1fe-000d3a47f3c7
+
+                    - kind: SendActivity
+                      id: sendActivity_tszyP6
+                      activity: Email enviado.
+
+              elseActions:
+                - kind: SendActivity
+                  id: sendActivity_AT5IP0
+                  activity: ok.
+
+                - kind: SetVariable
+                  id: setVariable_UAuwGO
+                  variable: Topic.CidadeString
+                  value: =Text(Topic.Cidade)
+
+            - kind: Question
+              id: question_s1BUAu
+              interruptionPolicy:
+                allowInterruption: true
+
+              variable: init:Topic.QuerModalidade
+              prompt: Quer saber os horários das modalidade oferecidas em {Topic.Cidade}??
+              entity: BooleanPrebuiltEntity
+
+            - kind: ConditionGroup
+              id: conditionGroup_9I18KV
+              conditions:
+                - id: conditionItem_eWDkXy
+                  condition: =Topic.QuerModalidade = true
+                  actions:
+                    - kind: Question
+                      id: question_CMYd9s
+                      interruptionPolicy:
+                        allowInterruption: true
+
+                      variable: init:Topic.ModalidadeEscolhida
+                      prompt: Qual modalidade quer saber o horário??
+                      entity:
+                        kind: EmbeddedEntity
+                        definition:
+                          kind: ClosedListEntity
+                          items:
+                            - id: Musculacao
+                              displayName: Musculacao
+
+                            - id: Cycling
+                              displayName: Cycling
+
+                            - id: Ioga
+                              displayName: Ioga
+
+                        displayName: EmbeddedEntity-y7OKVW
+
+                    - kind: ConditionGroup
+                      id: conditionGroup_OJ1PYw
+                      conditions:
+                        - id: conditionItem_qIOzbD
+                          condition: =Topic.ModalidadeEscolhida = 'cr4ab_gymBotHorario.topic.Untitled.main.question_CMYd9s'.Musculacao
+
+                        - id: conditionItem_2Kj3Qk
+                          condition: =Topic.ModalidadeEscolhida = 'cr4ab_gymBotHorario.topic.Untitled.main.question_CMYd9s'.Cycling
+
+                        - id: conditionItem_Nlflu8
+                          condition: =Topic.ModalidadeEscolhida = 'cr4ab_gymBotHorario.topic.Untitled.main.question_CMYd9s'.Ioga
+
+                    - kind: SetVariable
+                      id: setVariable_0jKKUA
+                      variable: Topic.ModString
+                      value: =Text(Topic.ModalidadeEscolhida)
+
+                    - kind: InvokeFlowAction
+                      id: invokeFlowAction_bII23D
+                      input:
+                        binding:
+                          text: =Topic.ModString
+                          text_1: =Topic.CidadeString
+
+                      output:
+                        binding:
+                          horario: Topic.horario
+
+                      flowId: 916f0ff8-8b00-ef11-9f89-000d3a47f3c7
+
+                    - kind: SendActivity
+                      id: sendActivity_EaakzI
+                      activity: "{Topic.Horario}"
+
+              elseActions:
+                - kind: SendActivity
+                  id: sendActivity_cJe0uj
+                  activity: ok.
+
+inputs:

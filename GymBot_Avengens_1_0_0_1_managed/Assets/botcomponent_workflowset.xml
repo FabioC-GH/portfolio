@@ -1,0 +1,32 @@
+<botcomponent_workflowset>
+  <botcomponent_workflow botcomponentid.schemaname="cr4ab_gymBotHorario.topic.GymVendas" workflowid.workflowid="0ce31c90-bb00-ef11-9f89-000d3a47f3c7">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_workflow>
+  <botcomponent_workflow botcomponentid.schemaname="cr4ab_gymBotHorario.topic.GymVendas" workflowid.workflowid="15d4ab0d-5b01-ef11-9f89-000d3a47f3c7">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_workflow>
+  <botcomponent_workflow botcomponentid.schemaname="cr4ab_gymBotHorario.topic.GymVendas" workflowid.workflowid="41238c8c-8801-ef11-9f89-000d3a47f3c7">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_workflow>
+  <botcomponent_workflow botcomponentid.schemaname="cr4ab_gymBotHorario.topic.GymVendas" workflowid.workflowid="5e6fe16b-bf00-ef11-9f89-000d3a47f3c7">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_workflow>
+  <botcomponent_workflow botcomponentid.schemaname="cr4ab_gymBotHorario.topic.GymVendas" workflowid.workflowid="d648ef18-5d01-ef11-9f89-000d3a47f3c7">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_workflow>
+  <botcomponent_workflow botcomponentid.schemaname="cr4ab_gymBotHorario.topic.GymVendas" workflowid.workflowid="f5967df1-ba00-ef11-9f89-000d3a47f3c7">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_workflow>
+  <botcomponent_workflow botcomponentid.schemaname="cr4ab_gymBotHorario.topic.GymVendas" workflowid.workflowid="fa8abe7d-5f01-ef11-9f89-000d3a47f3c7">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_workflow>
+  <botcomponent_workflow botcomponentid.schemaname="cr4ab_gymBotHorario.topic.GymVendas" workflowid.workflowid="fc4eb89b-5901-ef11-9f89-000d3a47f3c7">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_workflow>
+  <botcomponent_workflow botcomponentid.schemaname="cr4ab_gymBotHorario.topic.Untitled" workflowid.workflowid="1ce6000d-5efe-ee11-a1fe-000d3a47f3c7">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_workflow>
+  <botcomponent_workflow botcomponentid.schemaname="cr4ab_gymBotHorario.topic.Untitled" workflowid.workflowid="916f0ff8-8b00-ef11-9f89-000d3a47f3c7">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_workflow>
+</botcomponent_workflowset>

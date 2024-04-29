@@ -1,0 +1,10 @@
+<botcomponent schemaname="cr4ab_gymBotHorario.topic.Untitled">
+  <componenttype>9</componenttype>
+  <iscustomizable>0</iscustomizable>
+  <name>HorarioGym</name>
+  <parentbotid>
+    <schemaname>cr4ab_gymBotHorario</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>
