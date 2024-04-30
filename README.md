@@ -9,7 +9,7 @@ Offering power bi reports for better understanding the progression of membership
 A power apps app was developed both in mobile and tablet versions for management the gym daily work and its employes. 
 A simple model drive app, based on Dataverse tables was also developed for temporary promotions.
 
-A chatbot named Gymbot was developed, it cam answer questions about gym schedules of the various locations, and it also can small store selling supplies the information being stored in a sharepoint list.
+A chatbot named Gymbot was developed, it can answer questions about gym schedules of the various locations, and it also has a small store selling supplies, the information being stored in a sharepoint list.
 
 
 Power BI
