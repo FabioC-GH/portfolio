@@ -4,6 +4,7 @@
 I'm Fábio, I have a degree in chemistry, this is a portfolio of projects developed while attending the course UPSkill PowerPlatform
 
 A short portfolio showcases a project that was developed using Power Platform tools.
+
 alternative portfolio website: https://fabioc-gh.github.io/portfolio/
 
     --
