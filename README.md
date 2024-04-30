@@ -1,9 +1,12 @@
 # portfolio
+
+    About me
+I'm Fábio, I have a degree in chemistry, this is a portfolio of projects developed while attending the course Power Apps - Upskill
  
 A short portfolio showcases a project that was developed using Power Platform tools.
 alternative portfolio website: https://fabioc-gh.github.io/portfolio/
 
-
+--
 This project aims to create an application for a gymnasium. 
 Offering power bi reports for better understanding the progression of membership evolution and gym locations performance. 
 A power apps app was developed both in mobile and tablet versions for management the gym daily work and its employes. 
