@@ -52,7 +52,8 @@ Mobile:
     Slideshow of the sreens in the mobile app.
 ![Image Alt Text](arquivo/imgGitPortfolio/Gifs/GifMobile.gif)
 
-Power Automate
+Power Automate:
+
     Daily report of new entries in a database.
 ![Image Alt Text](arquivo/imgGitPortfolio/flow1.JPG)
 
@@ -61,5 +62,5 @@ Power Automate
 
 Model-driven app using DataVerse:
 
-  Slideshow of the sreens in the Model-driven app.
+    Slideshow of the sreens in the Model-driven app.
 ![Image Alt Text](arquivo/imgGitPortfolio/Gifs/GifModelDriven.gif)  
