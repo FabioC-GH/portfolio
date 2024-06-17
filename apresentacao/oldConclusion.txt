@@ -1,0 +1,6 @@
+During the Power Platform course, we developed the skills to build BI reports to the needs of the project allowing us to better understand the uses of PowerBI and our fictional business. 
+	Using Power Apps, we were able to develop applications for tablet and mobile with integration with Dataverse and SharePoint, providing better management of issues and gym employees. 
+	With Power Automate we were able to automate the process of approval of expenses for managers and send regular emails with schedule reports about gym membership evolution.
+	Copilot studio allowed us to develop a convenient way to answer regular question posed by the users, using a chatbot, saving time for more necessary task by the staff.
+	With Power Pages we build a quick and simple website to show to potential new customers our gym locations and services offered.
+	The acquired skills will be very valuable to develop solutions for any obstacle we might face in the future as Power Platform Developers.
